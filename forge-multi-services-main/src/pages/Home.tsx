@@ -10,7 +10,6 @@ const Home = () => {
       <Navbar />
       <HeroSection />
       <ServicesSection />
-      {/* <ContactForm /> */}
       <Footer />
     </div>
   );
