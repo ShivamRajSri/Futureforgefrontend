@@ -1,0 +1,31 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
+
+const Contact = () => {
+  return (
+    <div className="min-h-screen">
+      <Navbar />
+      
+      {/* Hero Section */}
+      <section className="pt-24 pb-16 bg-gradient-primary text-primary-foreground">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              Contact Us
+            </h1>
+            <p className="text-xl sm:text-2xl text-primary-foreground/90 leading-relaxed">
+              Ready to start your journey to success? Let's discuss how we can 
+              help transform your business vision into reality.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <ContactForm />
+      <Footer />
+    </div>
+  );
+};
+
+export default Contact;
