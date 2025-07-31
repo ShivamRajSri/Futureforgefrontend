@@ -440,11 +440,15 @@ const Services = () => {
                         </div>
                       ))}
                     </div>
-
-                    <Button variant="hero" size="xl" asChild>
-                      <Link to="/contact">
+                    <Button
+                      variant="hero"
+                      size="xl"
+                      className="w-full sm:w-auto flex items-center justify-center text-center"
+                      asChild
+                    >
+                      <Link to="/contact" className="flex items-center justify-center">
                         Get Started with {service.title}
-                        <ArrowRight className="w-5 h-5" />
+                        <ArrowRight className="w-5 h-5 ml-2" />
                       </Link>
                     </Button>
                   </div>

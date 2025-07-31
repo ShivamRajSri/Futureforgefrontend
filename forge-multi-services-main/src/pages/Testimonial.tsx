@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 const testimonials = [
   {
     name: "Ravi Sharma",
@@ -39,7 +40,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <div className="py-2 bg-background">
       <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -84,7 +85,8 @@ const TestimonialsSection = () => {
           ))}
         </div>
       </div>
-    </section>
+      <Footer/>
+    </div>
   );
 };
 
