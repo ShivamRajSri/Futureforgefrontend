@@ -30,7 +30,7 @@ const About = () => {
   ];
 
   const achievements = [
-    { number: "1000+", label: "Projects Completed" },
+    { number: "637+", label: "Projects Completed" },
     { number: "500+", label: "Happy Clients" },
     { number: "8", label: "Core Services" },
     { number: "24/7", label: "Support Available" }
@@ -40,15 +40,15 @@ const About = () => {
     {
       name: "Tushar Srivastav",
       role: "CEO & Founder",
-      description: "Visionary leader with 15+ years in business development and digital marketing."
+      description: "Visionary leader and proficient in business development and digital marketing."
     },
     {
-      name: "Shivam Raj Srivastav",
+      name: "Dipesh Mayla",
       role: "CTO",
       description: "Technical expert specializing in web development and innovative software solutions."
     },
     {
-      name: "Aman Bhardawaj",
+      name: "Aman ",
       role: "Creative Director",
       description: "Award-winning designer with expertise in real estate and business marketing campaigns."
     }
@@ -63,7 +63,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              About Future Fordge
+              About FutureForge
             </h1>
             <p className="text-xl sm:text-2xl text-primary-foreground/90 leading-relaxed">
               We're a dynamic team of innovators, creators, and strategists dedicated to 
