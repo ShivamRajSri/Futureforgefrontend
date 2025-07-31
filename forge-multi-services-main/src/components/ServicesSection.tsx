@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import {
   Building,
@@ -23,7 +29,7 @@ import funnelImage from "/Saman/Videoedit.jpeg";
 
 const ServicesSection = () => {
   const services = [
-        {
+    {
       icon: Filter,
       title: "Customer Acquisition Funnel Design",
       description:
@@ -94,7 +100,7 @@ const ServicesSection = () => {
       image: mediaBuyingImage,
       features: ["Google Ads", "Meta Ads", "Retargeting", "Budget Optimization"],
       color: "from-pink-500 to-pink-600",
-    }
+    },
   ];
 
   return (
@@ -109,13 +115,13 @@ const ServicesSection = () => {
             Comprehensive Solutions for
             <span className="block text-primary">Your Business Growth</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             We provide end-to-end services that transform your business vision into measurable success across multiple domains.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
           {services.map((service) => {
             const IconComponent = service.icon;
             return (
@@ -126,7 +132,7 @@ const ServicesSection = () => {
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-80`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-80`} />
                   <div className="absolute top-4 left-4">
                     <div className="w-12 h-12 bg-background/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
                       <IconComponent className="w-6 h-6 text-primary-foreground" />
@@ -144,7 +150,7 @@ const ServicesSection = () => {
                 </CardHeader>
 
                 <CardContent className="pt-0">
-                  <div className="grid grid-cols-2 gap-2 mb-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
                     {service.features.map((feature) => (
                       <div key={feature} className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
@@ -156,7 +162,7 @@ const ServicesSection = () => {
                   <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors" asChild>
                     <Link to="/services">
                       Learn More
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
                 </CardContent>
@@ -167,18 +173,23 @@ const ServicesSection = () => {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-gradient-primary rounded-2xl p-8 sm:p-12 text-center shadow-hero">
+          <div className="bg-gradient-primary rounded-2xl p-6 sm:p-12 text-center shadow-hero">
             <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
               Ready to Transform Your Business?
             </h3>
-            <p className="text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
               Let's discuss how our comprehensive services can help you achieve your business goals and drive growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="accent" size="xl" asChild>
+              <Button variant="accent" size="lg" asChild>
                 <Link to="/contact">Start Your Project</Link>
               </Button>
-              <Button variant="outline" size="xl" className="bg-background/20 backdrop-blur-sm border-background/30 text-primary-foreground hover:bg-background/30" asChild>
+              <Button
+                variant="outline"
+                size="lg"
+                className="bg-background/20 backdrop-blur-sm border-background/30 text-primary-foreground hover:bg-background/30"
+                asChild
+              >
                 <Link to="/services">View All Services</Link>
               </Button>
             </div>
