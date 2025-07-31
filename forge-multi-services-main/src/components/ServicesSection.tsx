@@ -23,6 +23,15 @@ import funnelImage from "/Saman/Videoedit.jpeg";
 
 const ServicesSection = () => {
   const services = [
+        {
+      icon: Filter,
+      title: "Customer Acquisition Funnel Design",
+      description:
+        "Design optimized funnels that convert visitors into loyal customers through structured, data-backed strategies.",
+      image: funnelImage,
+      features: ["Landing Pages", "Lead Magnets", "A/B Testing", "Conversion Analytics"],
+      color: "from-orange-500 to-orange-600",
+    },
     {
       icon: Building,
       title: "Real Estate Advertisement",
@@ -85,16 +94,7 @@ const ServicesSection = () => {
       image: mediaBuyingImage,
       features: ["Google Ads", "Meta Ads", "Retargeting", "Budget Optimization"],
       color: "from-pink-500 to-pink-600",
-    },
-    {
-      icon: Filter,
-      title: "Customer Acquisition Funnel Design",
-      description:
-        "Design optimized funnels that convert visitors into loyal customers through structured, data-backed strategies.",
-      image: funnelImage,
-      features: ["Landing Pages", "Lead Magnets", "A/B Testing", "Conversion Analytics"],
-      color: "from-orange-500 to-orange-600",
-    },
+    }
   ];
 
   return (
