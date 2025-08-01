@@ -36,6 +36,39 @@ import funnelImage from "/Saman/Videoedit.jpeg";
 
 const Services = () => {
   const services = [
+      {
+      id: "funnel-design",
+      icon: Filter,
+      title: "Customer Acquisition Funnel Design",
+      subtitle: "Conversion-Optimized Funnels",
+      description:
+        "Create data-backed customer acquisition funnels that convert traffic into loyal customers through structured targeting and measurement.",
+      image: funnelImage,
+      features: [
+        "Landing pages",
+        "Lead magnets",
+        "A/B testing",
+        "Conversion analytics",
+      ],
+      subServices: [
+        {
+          icon: Filter,
+          name: "Funnel Strategy",
+          description: "Optimized mapping from awareness to conversion",
+        },
+        {
+          icon: Filter,
+          name: "Landing Pages",
+          description: "High‑converting page designs",
+        },
+        {
+          icon: Filter,
+          name: "Testing & Analytics",
+          description: "Data‑driven funnel improvements",
+        },
+      ],
+      color: "from-orange-500 to-orange-600",
+       },
     {
       id: "real-estate",
       icon: Building,
@@ -270,39 +303,6 @@ const Services = () => {
         },
       ],
       color: "from-pink-500 to-pink-600",
-    },
-    {
-      id: "funnel-design",
-      icon: Filter,
-      title: "Customer Acquisition Funnel Design",
-      subtitle: "Conversion-Optimized Funnels",
-      description:
-        "Create data-backed customer acquisition funnels that convert traffic into loyal customers through structured targeting and measurement.",
-      image: funnelImage,
-      features: [
-        "Landing pages",
-        "Lead magnets",
-        "A/B testing",
-        "Conversion analytics",
-      ],
-      subServices: [
-        {
-          icon: Filter,
-          name: "Funnel Strategy",
-          description: "Optimized mapping from awareness to conversion",
-        },
-        {
-          icon: Filter,
-          name: "Landing Pages",
-          description: "High‑converting page designs",
-        },
-        {
-          icon: Filter,
-          name: "Testing & Analytics",
-          description: "Data‑driven funnel improvements",
-        },
-      ],
-      color: "from-orange-500 to-orange-600",
     },
   ];
 

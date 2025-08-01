@@ -30,8 +30,9 @@ const About = () => {
   ];
 
   const achievements = [
-    { number: "637+", label: "Projects Completed" },
-    { number: "500+", label: "Happy Clients" },
+    { number: "370+", label: "Local Businesses" },
+    { number: "173+", label: "Creators" },
+    { number: "41+", label: "Real Estate Businesses" },
     { number: "8", label: "Core Services" },
     { number: "24/7", label: "Support Available" }
   ];
@@ -45,12 +46,12 @@ const About = () => {
     {
       name: "Dipesh Mayla",
       role: "CTO",
-      description: "Technical expert specializing in web development and innovative software solutions."
+      description: "Creative expert in professional video editing and impactful logo design for powerful brand storytelling."
     },
     {
-      name: "Aman ",
-      role: "Creative Director",
-      description: "Award-winning designer with expertise in real estate and business marketing campaigns."
+      name: "Vansh Rana",
+      role: "Creative Head",
+      description: "Visionary Creative Head driving innovative concepts, compelling visuals, and brand excellence across all media platforms."
     }
   ];
 
@@ -82,8 +83,8 @@ const About = () => {
                 <span className="text-sm font-medium text-primary">Our Story</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-                Building Tomorrow's
-                <span className="block text-primary">Success Stories</span>
+                Forge Your Business With
+                <span className="block text-primary">FutureForge</span>
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
@@ -192,7 +193,14 @@ const About = () => {
               </Card>
             ))}
           </div>
-
+          <div className="bg-gradient-primary rounded-2xl p-8 mb-8 sm:p-12 text-center shadow-hero">
+            <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-6">
+              120+ Remote Creative Ops team Members
+              </h3>
+              <p className="text-lg text-primary-foreground/90 mb-8">
+              Our ForgeForce specialists across design,development,content,automation,and media.They bring agility,innovation,and execution power to every FutureForge project.
+              </p>
+                    </div>
           {/* Why Choose Us */}
           <div className="bg-gradient-primary rounded-2xl p-8 sm:p-12 text-center shadow-hero">
             <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-6">

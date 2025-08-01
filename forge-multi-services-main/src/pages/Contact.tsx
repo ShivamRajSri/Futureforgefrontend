@@ -15,8 +15,7 @@ const Contact = () => {
               Contact Us
             </h1>
             <p className="text-xl sm:text-2xl text-primary-foreground/90 leading-relaxed">
-              Ready to start your journey to success? Let's discuss how we can 
-              help transform your business vision into reality.
+              Forge your business to the next level..Get in touch with our team of experts today.
             </p>
           </div>
         </div>
