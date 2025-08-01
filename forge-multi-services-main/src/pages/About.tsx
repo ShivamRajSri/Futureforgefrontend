@@ -201,6 +201,11 @@ const About = () => {
               Our ForgeForce specialists across design,development,content,automation,and media.They bring agility,innovation,and execution power to every FutureForge project.
               </p>
                     </div>
+                              <div className="bg-gradient-primary rounded-2xl p-8 mb-8 sm:p-12 text-center shadow-hero">
+            <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-6">
+              Serving Clients in India, USA, and Canada
+              </h3>
+              </div>
           {/* Why Choose Us */}
           <div className="bg-gradient-primary rounded-2xl p-8 sm:p-12 text-center shadow-hero">
             <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-6">

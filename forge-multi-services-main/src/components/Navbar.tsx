@@ -30,7 +30,7 @@ const Navbar = () => {
                 alt="Future Forge Logo"
                 className="w-10 h-10 rounded-lg object-contain group-hover:scale-105 transition-transform"
               />
-              <span className="text-xl font-bold text-foreground">Future Forge</span>
+              <span className="text-xl font-bold text-foreground">FutureForge</span>
             </Link>
 
             {/* Nav Links for Large Screens */}
