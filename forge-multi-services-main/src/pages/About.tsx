@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Target, Users, Lightbulb, Award, CheckCircle, ArrowRight } from "lucide-react";
-
+import { motion } from "framer-motion";
 const About = () => {
   const values = [
     {
@@ -60,6 +60,12 @@ const About = () => {
       <Navbar />
       
       {/* Hero Section */}
+      <motion.section
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="pt-24 pb-16 bg-gradient-primary text-primary-foreground"
+>
       <section className="pt-24 pb-16 bg-gradient-primary text-primary-foreground">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
@@ -73,8 +79,14 @@ const About = () => {
           </div>
         </div>
       </section>
-
+</motion.section>
       {/* Our Story */}
+      <motion.div
+  initial={{ opacity: 0, x: -50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+>
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -105,6 +117,13 @@ const About = () => {
             </div>
             
             <div className="grid grid-cols-2 gap-6">
+                            <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="grid grid-cols-2 gap-6"
+              >
               {achievements.map((achievement, index) => (
                 <Card key={index} className="text-center border-0 bg-secondary/50 hover:shadow-card transition-shadow">
                   <CardContent className="p-6">
@@ -117,11 +136,12 @@ const About = () => {
                   </CardContent>
                 </Card>
               ))}
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
-
+</motion.div>
       {/* Our Values */}
       <section className="py-24 bg-secondary/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

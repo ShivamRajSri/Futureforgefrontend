@@ -3,9 +3,6 @@ import Footer from "@/components/Footer";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -25,6 +22,8 @@ import {
   DollarSign,
   Filter,
 } from "lucide-react";
+import { motion } from "framer-motion";
+
 import realEstateImage from "@/assets/real-estate-hero.jpg";
 import businessAdsImage from "@/assets/business-ads-hero.jpg";
 import webDevImage from "@/assets/web-dev-hero.jpg";
@@ -36,7 +35,7 @@ import funnelImage from "/Saman/Videoedit.jpeg";
 
 const Services = () => {
   const services = [
-      {
+    {
       id: "funnel-design",
       icon: Filter,
       title: "Customer Acquisition Funnel Design",
@@ -68,7 +67,7 @@ const Services = () => {
         },
       ],
       color: "from-orange-500 to-orange-600",
-       },
+    },
     {
       id: "real-estate",
       icon: Building,
@@ -306,45 +305,18 @@ const Services = () => {
     },
   ];
 
-  const processSteps = [
-    {
-      step: "01",
-      title: "Discovery & Strategy",
-      description:
-        "We begin by understanding your goals, target audience, and market landscape to develop a tailored strategy.",
-    },
-    {
-      step: "02",
-      title: "Design & Planning",
-      description:
-        "Our team creates detailed plans and designs that align with your brand and business objectives.",
-    },
-    {
-      step: "03",
-      title: "Development & Creation",
-      description:
-        "We bring your vision to life using the latest technologies and creative approaches.",
-    },
-    {
-      step: "04",
-      title: "Launch & Optimization",
-      description:
-        "We deploy your solution and continuously optimize performance based on real-world data.",
-    },
-  ];
-
   return (
     <div className="min-h-screen">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-primary text-primary-foreground">
+      <section className="pt-24 pb-16 bg-gradient-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               Our Services
             </h1>
-            <p className="text-xl sm:text-2xl text-primary-foreground/90 leading-relaxed">
+            <p className="text-xl sm:text-2xl text-white/80 leading-relaxed">
               Comprehensive solutions designed to accelerate your business
               growth and establish a commanding market presence.
             </p>
@@ -352,52 +324,57 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Details */}
+      {/* Services */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-24">
-            {services.map((service, index) => {
-              const IconComponent = service.icon;
-              const isEven = index % 2 === 0;
-              return (
-                <div
-                  key={service.id}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
-                    !isEven ? "lg:grid-flow-col-dense" : ""
-                  }`}
-                >
-                  {/* Service Image */}
-                  <div
-                    className={`relative ${!isEven ? "lg:col-start-2" : ""}`}
-                  >
-                    <div className="relative overflow-hidden rounded-2xl shadow-hero">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-96 object-cover"
-                      />
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-80`}
-                      ></div>
-                      <div className="absolute top-6 left-6">
-                        <div className="w-16 h-16 bg-background/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                          <IconComponent className="w-8 h-8 text-primary-foreground" />
-                        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            const isEven = index % 2 === 0;
+            return (
+              <motion.div
+                key={service.id}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
+                  !isEven ? "lg:grid-flow-col-dense" : ""
+                }`}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+              >
+                {/* Image */}
+                <div className={`relative ${!isEven ? "lg:col-start-2" : ""}`}>
+                  <div className="relative overflow-hidden rounded-2xl shadow-2xl transform transition duration-500 hover:scale-105">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-96 object-cover brightness-90 saturate-110"
+                    />
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-70 mix-blend-multiply`}
+                    ></div>
+                    <div className="absolute top-6 left-6">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-lg rounded-xl flex items-center justify-center">
+                        <IconComponent className="w-8 h-8 text-white" />
                       </div>
                     </div>
+                  </div>
 
-                    {/* Sub-services */}
-                    <div className="grid grid-cols-3 gap-4 mt-6">
-                      {service.subServices.map((sub, si) => {
-                        const SubIcon = sub.icon;
-                        return (
-                          <Card
-                            key={si}
-                            className="text-center border-0 bg-secondary/50 hover:shadow-card transition-shadow"
-                          >
+                  {/* Sub-services */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+                    {service.subServices.map((sub, si) => {
+                      const SubIcon = sub.icon;
+                      return (
+                        <motion.div
+                          key={si}
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.4, delay: si * 0.1 }}
+                        >
+                          <Card className="text-center border-0 bg-background/40 hover:shadow-xl transition-all rounded-xl">
                             <CardContent className="p-4">
                               <SubIcon className="w-6 h-6 text-primary mx-auto mb-2" />
-                              <div className="text-sm font-medium text-foreground mb-1">
+                              <div className="text-sm font-medium mb-1">
                                 {sub.name}
                               </div>
                               <div className="text-xs text-muted-foreground">
@@ -405,62 +382,66 @@ const Services = () => {
                               </div>
                             </CardContent>
                           </Card>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Service Content */}
-                  <div className={!isEven ? "lg:col-start-1 lg:row-start-1" : ""}>
-                    <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-4">
-                      <span className="text-sm font-medium text-primary">
-                        {service.title}
-                      </span>
-                    </div>
-
-                    <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-                      {service.subtitle}
-                    </h2>
-
-                    <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    {/* Features list */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                      {service.features.map((feat, fi) => (
-                        <div
-                          key={fi}
-                          className="flex items-start gap-3"
-                        >
-                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground">
-                            {feat}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                    <Button
-                      variant="hero"
-                      size="xl"
-                      className="w-full sm:w-auto flex items-center justify-center text-center"
-                      asChild
-                    >
-                      <Link to="/contact" className="flex items-center justify-center">
-                        Get Started with {service.title}
-                        <ArrowRight className="w-5 h-5 ml-2" />
-                      </Link>
-                    </Button>
+                        </motion.div>
+                      );
+                    })}
                   </div>
                 </div>
-              );
-            })}
-          </div>
+
+                {/* Content */}
+                <motion.div
+                  className={!isEven ? "lg:col-start-1 lg:row-start-1" : ""}
+                  initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7 }}
+                >
+                  <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-4">
+                    <span className="text-sm font-semibold text-primary">
+                      {service.title}
+                    </span>
+                  </div>
+
+                  <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
+                    {service.subtitle}
+                  </h2>
+
+                  <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                    {service.features.map((feat, fi) => (
+                      <div
+                        key={fi}
+                        className="flex items-start gap-3"
+                      >
+                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-muted-foreground">
+                          {feat}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Button
+                    variant="hero"
+                    size="xl"
+                    className="w-full sm:w-auto transition-transform hover:scale-105"
+                    asChild
+                  >
+                    <Link to="/contact" className="flex items-center">
+                      Get Started with {service.title}
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Link>
+                  </Button>
+                </motion.div>
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 
-      {/* Process & CTA & Footer unchanged */}
-      {/* ... process and CTA sections as before */}
       <Footer />
     </div>
   );

@@ -57,9 +57,9 @@ const HeroSection = () => {
     </div>
 
     {/* Countries Served */}
-    <div className="mt-6 text-white/80 text-sm sm:text-base">
-      Serving Clients in <span className="font-semibold text-white">India</span> | <span className="font-semibold text-white">USA</span> | <span className="font-semibold text-white">Canada</span>
-    </div>
+ <div className="mt-6 text-white/90 text-lg sm:text-xl font-semibold tracking-wide text-center">
+  Serving Clients in <span className="text-white">India</span> | <span className="text-white">USA</span> | <span className="text-white">Canada</span>
+</div>
   </div>
 </section>
   );

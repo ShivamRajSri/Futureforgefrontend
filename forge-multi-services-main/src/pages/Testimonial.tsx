@@ -1,93 +1,96 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 const testimonials = [
   {
-    name: "Ravi Sharma",
-    title: "Founder, PropNest Realty",
-    image: "/testimonials/ravi.jpg",
-    feedback:
-      "The Real Estate Advertisement service was spot on! Our properties saw a 60% increase in online inquiries. Truly impressive visuals and strategic marketing.",
-    rating: 5,
+    name: "Shivam Raj",
+    location: "India",
+    text: "Working with Future Forge was a game-changer for our startup. Their team is incredibly professional and delivered beyond expectations."
   },
   {
-    name: "Anjali Mehta",
-    title: "Marketing Head, GrowFast Corp",
-    image: "/testimonials/anjali.jpg",
-    feedback:
-      "Their CRM automation changed how we handle leads. We now close deals faster and retain clients better. Absolutely recommended!",
-    rating: 5,
+    name: "Emily Chen",
+    location: "USA",
+    text: "Future Forge helped us scale faster with their automation and marketing strategies. Highly recommended!"
   },
   {
-    name: "Siddharth Verma",
-    title: "CEO, StartNova Tech",
-    image: "/testimonials/sid.jpg",
-    feedback:
-      "We hired them for web & app development, and the results were outstanding. Sleek design, fast performance, and responsive team support!",
-    rating: 5,
+    name: "Carlos Diaz",
+    location: "Canada",
+    text: "Innovative, creative, and responsive. The team at Future Forge truly understands what businesses need."
   },
   {
-    name: "Neha Tiwari",
-    title: "Creative Director, Visionary Films",
-    image: "/testimonials/neha.jpg",
-    feedback:
-      "The video editing and brand communication services took our social presence to a whole new level. Every reel tells a powerful story!",
-    rating: 5,
+    name: "Priya Nair",
+    location: "India",
+    text: "Absolutely satisfied with the design and development process. Every aspect was handled with perfection."
   },
+  {
+    name: "David Kim",
+    location: "USA",
+    text: "The turnaround time was excellent. They delivered a powerful solution that exceeded our expectations."
+  }
 ];
 
-const TestimonialsSection = () => {
-  return (
-    <div className="py-2 bg-background">
-      <Navbar />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-4">
-            <span className="text-sm font-medium text-primary">What Clients Say</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Testimonials
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Hear directly from our clients who’ve experienced business growth and creative success with our services.
-          </p>
-        </div>
+const FiveStars = () => (
+  <div className="flex text-yellow-500">
+    {Array.from({ length: 5 }).map((_, i) => (
+      <Star key={i} fill="currentColor" strokeWidth={0} className="w-4 h-4" />
+    ))}
+  </div>
+);
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card
-              key={index}
-              className="bg-card border border-border shadow-md hover:shadow-lg transition-shadow duration-300"
-            >
-              <CardHeader className="pb-2">
-                <div className="flex items-center gap-4">
-                  <Avatar>
-                    <AvatarImage src={testimonial.image} />
-                    <AvatarFallback>{testimonial.name.split(" ")[0][0]}{testimonial.name.split(" ")[1]?.[0]}</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <CardTitle className="text-lg">{testimonial.name}</CardTitle>
-                    <CardDescription>{testimonial.title}</CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4 italic">"{testimonial.feedback}"</p>
-                <div className="flex gap-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-      <Footer/>
-    </div>
+const TestimonialCard = ({ review }: { review: typeof testimonials[0] }) => (
+  <Card className="bg-background/80 backdrop-blur-md border border-border rounded-2xl shadow-md m-2">
+    <CardContent className="flex flex-col gap-4 p-6">
+      <FiveStars />
+      <p className="text-muted-foreground text-sm">{review.text}</p>
+      <div className="text-sm font-semibold">{review.name}</div>
+      <div className="text-xs text-gray-400">{review.location}</div>
+    </CardContent>
+  </Card>
+);
+
+const TestimonialSection = () => {
+  const settings = {
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    speed: 1000,
+    cssEase: "linear",
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  };
+
+  return (
+    <section className="py-16 px-4 sm:px-8 lg:px-16 bg-muted/30">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-primary">
+        Hear from Our Happy Clients
+      </h2>
+      <Slider {...settings} className="testimonial-slider">
+        {testimonials.map((review, index) => (
+          <div key={index}>
+            <TestimonialCard review={review} />
+          </div>
+        ))}
+      </Slider>
+    </section>
   );
 };
 
-export default TestimonialsSection;
+export default TestimonialSection;
