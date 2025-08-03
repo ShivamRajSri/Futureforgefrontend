@@ -57,8 +57,13 @@ const HeroSection = () => {
     </div>
 
     {/* Countries Served */}
- <div className="mt-6 text-white/90 text-lg sm:text-xl font-semibold tracking-wide text-center">
-  Serving Clients in <span className="text-white">India</span> | <span className="text-white">USA</span> | <span className="text-white">Canada</span>
+<div className="mt-6 text-center">
+  <div className="inline-block bg-blue-600 text-white/90 text-lg sm:text-xl font-semibold tracking-wide px-4 py-2 rounded-md">
+    Serving Clients in
+  </div>
+  <div className="mt-2 text-white text-lg sm:text-xl font-bold tracking-wide">
+    India | USA | Canada
+  </div>
 </div>
   </div>
 </section>

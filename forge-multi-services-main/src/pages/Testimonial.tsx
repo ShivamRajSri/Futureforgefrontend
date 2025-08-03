@@ -1,35 +1,42 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 
 const testimonials = [
   {
-    name: "Shivam Raj",
-    location: "India",
-    text: "Working with Future Forge was a game-changer for our startup. Their team is incredibly professional and delivered beyond expectations."
+    name: "Eco Car Wash",
+    location: "Austin, Texas, USA",
+    text: "Our monthly subscription model was confusing to customers until FutureForge stepped in. They built a slick landing page with an easy funnel, and the conversions jumped by 60%. Incredible work!"
   },
   {
-    name: "Emily Chen",
-    location: "USA",
-    text: "Future Forge helped us scale faster with their automation and marketing strategies. Highly recommended!"
+    name: "Maple Lane Pet Store",
+    location: "Toronto, Canada",
+    text: "We needed help bringing our in-store experience online. FutureForge built us a sales funnel and rebranded our website with stunning visuals. Our local online orders have taken off!"
   },
   {
-    name: "Carlos Diaz",
-    location: "Canada",
-    text: "Innovative, creative, and responsive. The team at Future Forge truly understands what businesses need."
+    name: "Aarushi Sharma",
+    location: "India (Lifestyle Influencer)",
+    text: "FutureForge helped me automate my content booking system and launched a digital portfolio that looks premium and converts. My brand deals now feel organized and scalable."
   },
   {
-    name: "Priya Nair",
-    location: "India",
-    text: "Absolutely satisfied with the design and development process. Every aspect was handled with perfection."
+    name: "The Fit Doc",
+    location: "Canada (Health & Wellness Creator)",
+    text: "The team understood my audience perfectly. They built a community funnel that moved my YouTube subscribers into an email list, where I now sell my e-books directly. Game-changer!"
   },
   {
-    name: "David Kim",
-    location: "USA",
-    text: "The turnaround time was excellent. They delivered a powerful solution that exceeded our expectations."
+    name: "@RealChefMike",
+    location: "USA (Food Content Creator)",
+    text: "I needed someone to structure my online cooking course funnel. FutureForge took my idea and turned it into a high-converting system. I made more in one launch than I did in 6 months on socials!"
+  },
+  {
+    name: "Rahul Arora Realty",
+    location: "Delhi NCR, India",
+    text: "Leads were scattered and unqualified—until FutureForge streamlined my entire funnel. From lead magnet to WhatsApp follow-ups, everything runs smoothly now. I closed 4 deals last month directly through the funnel."
+  },
+  {
+    name: "Keller & Grove Realty",
+    location: "Vancouver, Canada",
+    text: "FutureForge helped us generate consistent buyer leads with a landing page and retargeting strategy tailored for the Canadian market. Our team is impressed with the results and the support!"
   }
 ];
 
@@ -42,7 +49,7 @@ const FiveStars = () => (
 );
 
 const TestimonialCard = ({ review }: { review: typeof testimonials[0] }) => (
-  <Card className="bg-background/80 backdrop-blur-md border border-border rounded-2xl shadow-md m-2">
+  <Card className="bg-background/80 backdrop-blur-md border border-border rounded-2xl shadow-md flex-shrink-0 w-[300px] sm:w-[340px] mx-4">
     <CardContent className="flex flex-col gap-4 p-6">
       <FiveStars />
       <p className="text-muted-foreground text-sm">{review.text}</p>
@@ -53,42 +60,18 @@ const TestimonialCard = ({ review }: { review: typeof testimonials[0] }) => (
 );
 
 const TestimonialSection = () => {
-  const settings = {
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    speed: 1000,
-    cssEase: "linear",
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
-  };
-
   return (
     <section className="py-16 px-4 sm:px-8 lg:px-16 bg-muted/30">
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-primary">
         Hear from Our Happy Clients
       </h2>
-      <Slider {...settings} className="testimonial-slider">
-        {testimonials.map((review, index) => (
-          <div key={index}>
-            <TestimonialCard review={review} />
-          </div>
-        ))}
-      </Slider>
+      <div className="overflow-hidden relative">
+        <div className="flex w-max animate-scroll-x gap-4 hover:[animation-play-state:paused]">
+          {[...testimonials, ...testimonials].map((review, i) => (
+            <TestimonialCard key={i} review={review} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
