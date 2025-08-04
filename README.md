@@ -34,6 +34,3 @@ FutureForge is a modern, responsive, and visually compelling multi-service provi
 - 🌐 **SEO-Friendly**: Semantic HTML and optimized content.
 
 ---
-
-## 📂 Project Structure
-
