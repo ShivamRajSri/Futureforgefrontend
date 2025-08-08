@@ -62,11 +62,14 @@ const HeroSection = () => {
           Serving Clients in
         </div>
             <div className="mt-2 text-lg sm:text-xl font-bold tracking-wide text-white relative">
-              <span className="font-bold mx-2 text-violet-500">India</span>
-              <span className="font-bold mx-2 text-violet-500">|</span>
-              <span className="font-bold mx-2 text-violet-500">USA</span>
-              <span className="font-bold mx-2 text-violet-500">|</span>
-              <span className="font-bold mx-2 text-violet-500">Canada</span>
+              <span className="font-bold mx-2 text-white/90">India</span>
+              <span className="font-bold mx-2 text-white/90">|</span>
+              <span className="font-bold mx-2 text-white/90">USA</span>
+              <span className="font-bold mx-2 text-white/90">|</span>
+              <span className="font-bold mx-2 text-white/90">Canada</span>
+              <span className="font-bold mx-2 text-white/90">|</span>
+              <span className="font-bold mx-2 text-white/90">UK</span>
+
             </div>
    </div>
    </div>
