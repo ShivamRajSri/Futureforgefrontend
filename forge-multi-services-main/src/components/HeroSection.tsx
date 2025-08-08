@@ -61,34 +61,13 @@ const HeroSection = () => {
         <div className="inline-block bg-blue-600 text-white/90 text-lg sm:text-xl font-semibold tracking-wide px-4 py-2 rounded-md">
           Serving Clients in
         </div>
-        <div className="mt-2 text-lg sm:text-xl font-bold tracking-wide text-white relative">
-          <style>
-            {`
-              @keyframes colorCycle {
-                0%   { color: #e11d48; }  /* rose-600 */
-                10%  { color: #f97316; }  /* orange-500 */
-                20%  { color: #facc15; }  /* yellow-400 */
-                30%  { color: #10b981; }  /* emerald-500 */
-                40%  { color: #14b8a6; }  /* teal-500 */
-                50%  { color: #3b82f6; }  /* blue-500 */
-                60%  { color: #6366f1; }  /* indigo-500 */
-                70%  { color: #8b5cf6; }  /* violet-500 */
-                80%  { color: #ec4899; }  /* pink-500 */
-                90%  { color: #f43f5e; }  /* rose-500 */
-                100% { color: #e11d48; }  /* back to start */
-              }
-              .animate-colorCycle {
-                animation: colorCycle 5s linear infinite;
-              }
-            `}
-          </style>
-
-          <span className="font-bold mx-2 animate-colorCycle">India</span>
-          <span className="font-bold mx-2 animate-colorCycle">|</span>
-          <span className="font-bold mx-2 animate-colorCycle">USA</span>
-          <span className="font-bold mx-2 animate-colorCycle">|</span>
-          <span className="font-bold mx-2 animate-colorCycle">Canada</span>
-        </div>
+            <div className="mt-2 text-lg sm:text-xl font-bold tracking-wide text-white relative">
+              <span className="font-bold mx-2 text-violet-500">India</span>
+              <span className="font-bold mx-2 text-violet-500">|</span>
+              <span className="font-bold mx-2 text-violet-500">USA</span>
+              <span className="font-bold mx-2 text-violet-500">|</span>
+              <span className="font-bold mx-2 text-violet-500">Canada</span>
+            </div>
    </div>
    </div>
 </section>
