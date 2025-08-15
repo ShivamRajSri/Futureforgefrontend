@@ -56,64 +56,27 @@ const HeroSection = () => {
       </Button>
     </div>
 
-    {/* Countries Served */}
+{/* Countries Served */}
 <div className="mt-6 text-center">
-        <div className="inline-block bg-blue-600 text-white/90 text-lg sm:text-xl font-semibold tracking-wide px-4 py-2 rounded-md">
-          Serving Clients in
-        </div>
-<div className="overflow-hidden w-full bg-transparent">
-  <div
-    className="flex whitespace-nowrap animate-marquee text-lg sm:text-xl font-bold tracking-wide text-white"
-    style={{ animation: "marquee 12s linear infinite" }}
-  >
-    <span className="flex items-center mx-4">
-      <img
-        src="https://flagcdn.com/w20/in.png"
-        alt="India"
-        className="w-5 h-3 mr-2"
-      />
-      India
-    </span>
-    <span className="text-white/90">|</span>
+  <div className="inline-block bg-blue-600 text-white/90 text-lg sm:text-xl font-semibold tracking-wide px-4 py-2 rounded-md">
+    Serving Clients in
+  </div>
 
-    <span className="flex items-center mx-4">
-      <img
-        src="https://flagcdn.com/w20/us.png"
-        alt="USA"
-        className="w-5 h-3 mr-2"
-      />
-      USA
-    </span>
-    <span className="text-white/90">|</span>
-
-    <span className="flex items-center mx-4">
-      <img
-        src="https://flagcdn.com/w20/ca.png"
-        alt="Canada"
-        className="w-5 h-3 mr-2"
-      />
-      Canada
-    </span>
-    <span className="text-white/90">|</span>
-
-    <span className="flex items-center mx-4">
-      <img
-        src="https://flagcdn.com/w20/gb.png"
-        alt="UK"
-        className="w-5 h-3 mr-2"
-      />
-      UK
-    </span>
-    <span className="text-white/90">|</span>
-
-    <span className="flex items-center mx-4">
-      <img
-        src="https://flagcdn.com/w20/br.png"
-        alt="Brazil"
-        className="w-5 h-3 mr-2"
-      />
-      Brazil
-    </span>
+  {/* Scrolling flags in middle part */}
+  <div className="relative flex justify-center mt-2">
+    <div className="overflow-hidden w-64 sm:w-80 bg-transparent"> {/* central width */}
+      <div
+        className="flex whitespace-nowrap animate-marquee gap-6"
+        style={{ animation: "marquee 12s linear infinite" }}
+      >
+        <img src="https://flagcdn.com/w40/in.png" alt="India" className="w-14 h-7" />
+        <img src="https://flagcdn.com/w40/us.png" alt="USA" className="w-14 h-7" />
+        <img src="https://flagcdn.com/w40/ca.png" alt="Canada" className="w-14 h-7" />
+        <img src="https://flagcdn.com/w40/gb.png" alt="UK" className="w-14 h-7" />
+        <img src="https://flagcdn.com/w40/br.png" alt="Brazil" className="w-14 h-7" />
+        <img src="https://flagcdn.com/w40/au.png" alt="Australia" className="w-14 h-7" />
+      </div>
+    </div>
   </div>
 
   {/* Marquee animation */}
@@ -127,7 +90,7 @@ const HeroSection = () => {
   </style>
 </div>
 
-   </div>
+   {/* </div> */}
    </div>
 </section>
   );
