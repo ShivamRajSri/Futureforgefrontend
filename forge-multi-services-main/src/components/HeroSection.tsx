@@ -61,16 +61,72 @@ const HeroSection = () => {
         <div className="inline-block bg-blue-600 text-white/90 text-lg sm:text-xl font-semibold tracking-wide px-4 py-2 rounded-md">
           Serving Clients in
         </div>
-            <div className="mt-2 text-lg sm:text-xl font-bold tracking-wide text-white relative">
-              <span className="font-bold mx-2 text-white/90">India</span>
-              <span className="font-bold mx-2 text-white/90">|</span>
-              <span className="font-bold mx-2 text-white/90">USA</span>
-              <span className="font-bold mx-2 text-white/90">|</span>
-              <span className="font-bold mx-2 text-white/90">Canada</span>
-              <span className="font-bold mx-2 text-white/90">|</span>
-              <span className="font-bold mx-2 text-white/90">UK</span>
+<div className="overflow-hidden w-full bg-transparent">
+  <div
+    className="flex whitespace-nowrap animate-marquee text-lg sm:text-xl font-bold tracking-wide text-white"
+    style={{ animation: "marquee 12s linear infinite" }}
+  >
+    <span className="flex items-center mx-4">
+      <img
+        src="https://flagcdn.com/w20/in.png"
+        alt="India"
+        className="w-5 h-3 mr-2"
+      />
+      India
+    </span>
+    <span className="text-white/90">|</span>
 
-            </div>
+    <span className="flex items-center mx-4">
+      <img
+        src="https://flagcdn.com/w20/us.png"
+        alt="USA"
+        className="w-5 h-3 mr-2"
+      />
+      USA
+    </span>
+    <span className="text-white/90">|</span>
+
+    <span className="flex items-center mx-4">
+      <img
+        src="https://flagcdn.com/w20/ca.png"
+        alt="Canada"
+        className="w-5 h-3 mr-2"
+      />
+      Canada
+    </span>
+    <span className="text-white/90">|</span>
+
+    <span className="flex items-center mx-4">
+      <img
+        src="https://flagcdn.com/w20/gb.png"
+        alt="UK"
+        className="w-5 h-3 mr-2"
+      />
+      UK
+    </span>
+    <span className="text-white/90">|</span>
+
+    <span className="flex items-center mx-4">
+      <img
+        src="https://flagcdn.com/w20/br.png"
+        alt="Brazil"
+        className="w-5 h-3 mr-2"
+      />
+      Brazil
+    </span>
+  </div>
+
+  {/* Marquee animation */}
+  <style>
+    {`
+      @keyframes marquee {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+      }
+    `}
+  </style>
+</div>
+
    </div>
    </div>
 </section>
